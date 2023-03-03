@@ -1,11 +1,11 @@
-Trang chủ : Sản phẩm mới/ Bán chạy / Nguồn gốc 
-Trang danh mục: Lấy đc sản phẩm theo danh mục (có thể lấy theo danh mục con)
-Trang chi tiết sản phẩm: Lấy đc thông tin sản phẩm
-Trang giỏ hàng: Lấy đc thông tin giỏ hàng
-Trang thanh toán: Lấy đc thông tin thanh toán (Tích hợp thanh toán Stripe)
-Trang đơn hàng: Lấy đc thông tin đơn hàng của khách 
-Trang tìm kiếm: Lấy đc thông tin sản phẩm theo từ khóa tìm kiếm
-Trang hồ sơ: Lấy đc thông tin hồ sơ của khách hàng
+Trang chủ : Today List, Nhạc hot, Nhạc mới, Nhạc Việt
+Danh mục nhạc: Rap/ Rock
+Nghe nhạc : Bình luận, player chơi nhạc 
+Tìm kiếm : Tìm kiếm theo tên bài hát, ca sĩ, album, playlist
+Đăng nhập : Đăng nhập bằng tài khoản email/password
+Đăng ký : Đăng ký bằng tài khoản email/password
+Profile: cập nhật hồ sơ/ tạo list nhạc yêu thích/ tạo playlist
+
 
 User:
     -id
@@ -16,74 +16,48 @@ User:
     -address
     -avatar
 
-Product:
+Song:
     -id
     -name
-    -price
-    -description
-    -short_description
     -category_id
-    -price_discount(0)
-    -review_count(0)
-    -review_avg(0)-> 1/5
     -views(0)
-    -total_sold(0)
-    -is_secondhand
-    -status
-
-Attribute:
-    -id
-    -name
-
-Attribute_value:
-    -id
-    -value
-    -attribute_id
-
-Product_attribute_value:
-    -id
-    -product_id
-    -attribute_value_id
+    -path
+    -image
+    -lyric
+    -album_id
+    -playlist_id
 
 Category:
     -id
     -name
     -parent_id
 
-Order:
-    -id
-    -user_id
-    -full_name
-    -note
-    -phone
-    -address
-    -sub_total
-    -tax
-    -total
-    -status
-`
-Order_detail:
-    -id
-    -order_id
-    -product_id
-    -quantity
-    -price
-    -discount_price(0)
-    -total
-    -name
-    -attributes
-
-Image:
+Singer:
     -id
     -name
-    -path
-    -product_id
-    -is_thumbnail(0)-> 1 ảnh đại diện, 0 là ảnh bt
 
-Review:
+Song_singer:
+    -id
+    -song_id
+    -singer_id
+
+Album:
+   - id
+   - name
+   
+Album_Singer:
+    -id
+    -album_id
+    -singer_id
+
+Playlist:
+    -id
+    -name
+    -user_id
+    -image
+
+Comment:
     -id
     -user_id
-    -product_id
     -content
-    -rating(1-5)
-    -status
+    -song_id
