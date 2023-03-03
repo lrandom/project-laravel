@@ -1,39 +1,48 @@
-Trang chủ :Bài viết nhiều người xem, bài viết hot
-Trang danh mục : Phân loại bài viét
-Trang chi tiết 
+Trang chủ : Truyện mới cập nhật, truyện hot
+Trang danh mục : Phân loại truyện
+Trang chi tiết truyện -> list danh sách chapter-> Trang đọc truyện
+Trang tìm kiếm truyện
+
 
 User:
-    -id
-    -name
-    -email
+    -id   
+    -username
     -password
+    -email
     -avatar
-
-Post:
-    -id
-    -title
-    -content
-    -user_id
-    -category_id
-    -status
-    -view_count
-    -created_at
-    -updated_at
-   
 
 Category:
     -id
     -name
-    -parent_id
+
+Comics/Manga/Manhua/Manhwa:
+    -id
+    -name
+    -description
+    -image
+    -category_id
     -status
+    -views
     -created_at
     -updated_at
 
-Links:
+Chapter:
     -id
-    -name
-    -url
-    -post_id
-    -status
+    -title
+    -comics_id
+    -created_at
+    -updated_at
+
+Art:
+    -id
+    -image
+    -chapter_id
+
+Comment:
+    -id
+    -content
+    -user_id
+    -comics_id
+    -chaper_id
     -created_at
     -updated_at
