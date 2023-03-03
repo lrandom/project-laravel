@@ -1,57 +1,89 @@
-Trang chủ -> phim hot -> do thằng admin chọn/ phim oscar -> do thằng admin chọn/
-phim nhiều người xem-> lượt xem -> tính lượt xem / phim mới cập nhật -> thời gian upload phim
-
-Trang danh mục phim-> danh mục phim theo thể loại -> phim theo thể loại
-Trang tìm kiếm -> tìm kiếm theo tên phim/ diễn viên/ đạo diễn/ năm phát hành/ quốc gia/ thể loại
-Trang xem phim -> player xem phim/ bình luận
-Trang Đăng nhập-> email/password
-Trang Đăng ký-> email/tên/password
-Trang Hồ sơ -> cập nhật hồ sơ (thông tin/mk) 
+Trang chủ : Sản phẩm mới/ Bán chạy/ Hàng Second Hand/ Điện thoại / Máy tính
+Trang danh mục: Lấy đc sản phẩm theo danh mục (có thể lấy theo danh mục con)
+Trang chi tiết sản phẩm: Lấy đc thông tin sản phẩm
+Trang giỏ hàng: Lấy đc thông tin giỏ hàng
+Trang thanh toán: Lấy đc thông tin thanh toán (Tích hợp thanh toán Stripe)
+Trang đơn hàng: Lấy đc thông tin đơn hàng của khách 
+Trang tìm kiếm: Lấy đc thông tin sản phẩm theo từ khóa tìm kiếm
+Trang hồ sơ: Lấy đc thông tin hồ sơ của khách hàng
 
 User:
-    - id
-    - email
-    - password
-    - username
+    -id
+    -name
+    -email
+    -password
+    -phone
+    -address
+    -avatar
 
-Film:
-   - id
-   - name
-   - description
-   - image
-   - path
-   - year-> năm phát hành 
-   - country_id -> bảng quốc gia 
-   - category_id -> bảng thể loại
-   - director_id -> bảng đạo diễn
-   - actor_id -> bảng diễn viên/tách ra bảng phụ n-n
-   - views -> lượt xem
-   - is_hot (0)-> phim hot /0 là ko hot/1 là hot
-   - is_oscar (0)-> phim oscar /0 là ko oscar/1 là oscar
+Product:
+    -id
+    -name
+    -price
+    -description
+    -short_description
+    -category_id
+    -price_discount(0)
+    -review_count(0)
+    -review_avg(0)-> 1/5
+    -views(0)
+    -total_sold(0)
+    -is_secondhand
+    -status
+
+Attribute:
+    -id
+    -name
+
+Attribute_value:
+    -id
+    -value
+    -attribute_id
+
+Product_attribute_value:
+    -id
+    -product_id
+    -attribute_value_id
 
 Category:
-    - id
-    - name
+    -id
+    -name
+    -parent_id
 
-Country:
-    - id
-    - name
+Order:
+    -id
+    -user_id
+    -full_name
+    -note
+    -phone
+    -address
+    -sub_total
+    -tax
+    -total
+    -status
+`
+Order_detail:
+    -id
+    -order_id
+    -product_id
+    -quantity
+    -price
+    -discount_price(0)
+    -total
+    -name
+    -attributes
 
-Director:
-    - id
-    - name
+Image:
+    -id
+    -name
+    -path
+    -product_id
+    -is_thumbnail(0)-> 1 ảnh đại diện, 0 là ảnh bt
 
-Actor:
-    - id
-    - name
-
-FirmActor:
-    - id
-    - film_id
-    - actor_id
-
-Comment:
-    - id
-    - user_id
-    - film_id
-    - content
+Review:
+    -id
+    -user_id
+    -product_id
+    -content
+    -rating(1-5)
+    -status
