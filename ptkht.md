@@ -1,4 +1,4 @@
-Trang chủ : Sản phẩm mới/ Bán chạy/ Hàng Second Hand/ Điện thoại / Máy tính
+Trang chủ : Sản phẩm mới/ Bán chạy / Nguồn gốc 
 Trang danh mục: Lấy đc sản phẩm theo danh mục (có thể lấy theo danh mục con)
 Trang chi tiết sản phẩm: Lấy đc thông tin sản phẩm
 Trang giỏ hàng: Lấy đc thông tin giỏ hàng
